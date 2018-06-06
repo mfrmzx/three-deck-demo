@@ -36,27 +36,44 @@
   <div class="deck-container">
 
     <!-- Begin slides -->
-    <section class="slide" id="title-slide">
+    <section class="slide">
       <h1>three.js分享</h1>
     </section>
 
-    <section class="slide" id="how-to-overview">
+    <section class="slide">
       <h2>three.js简介</h2>
       <ol>
         <li>
           <h2>WEBGL</h2>
-          <p> &nbsp;WebGL（Web Graphics Library ）是一种 3D 绘图标准，这种绘图技术标准允许把 JavaScript 和 OpenGL ES 2.0 结合在一起，通过增加 OpenGL ES 2.0 的一个 JavaScript 绑定， WebGL 可以为 HTML5 Canvas 提供硬件 3D 加速渲染，这样 Web 开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型了</p>
+          <p> &nbsp;&nbsp;&nbsp;&nbsp;WebGL（Web Graphics Library ）是一种 3D 绘图标准，这种绘图技术标准允许把 JavaScript 和 OpenGL ES 2.0 结合在一起，通过增加 OpenGL ES 2.0 的一个 JavaScript 绑定， WebGL 可以为 HTML5 Canvas 提供硬件 3D 加速渲染，这样开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型。</p>
         </li>
         <li>
           <h2>ThreeJS</h2>
-          <p>ThreeJS主要是对WebGL编程以面向对象方式进行了封装</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;three.js是一个javascript的开源三维引擎。three.js对WebGL以面向对象方式进行了封装，使得开发人员可以不用再关注底层的3D图形渲染的细节，利用three.js提供的API就可以很容易的创建出各种三维场景。</p>
+        </li>
+        <li>
+          <h2>ThreeJS学习网址</h2>
+          <p><a href="http://techbrood.com/threejs/docs/">http://techbrood.com/threejs/docs/</a></p>
         </li>
       </ol>
     </section>
 
-    <section class="slide" id="quick-start">
-      <h2>Quick Start</h2>
-      <p>When you <a href="https://github.com/imakewebthings/deck.js/archive/latest.zip">download</a> deck.js, it will include a file named <code>boilerplate.html</code>. You can immediately start editing slides in this page and viewing them in your web browser. Later on, when you are comfortable customizing the deck, you can edit the various pieces of the boilerplate or make your own to suit your needs.</p>
+    <section class="slide">
+      <h2>three.js三大组件</h2>
+      <ol>
+        <li>
+          <h2>相机（Camera）</h2>
+          <p> &nbsp;&nbsp;&nbsp;&nbsp; 相机类似于我们的眼睛，它的作用是定义可视域，即确定哪些图形元素是可见的</p>
+        </li>
+        <li>
+          <h2>场景(Scene)</h2>
+          <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景类似于我们所处世界，相当于一个容器，可以用来容纳各种图形元素,图形元素只有添加到场景中，其坐标、大小等才有意义。</p>
+        </li>
+        <li>
+          <h2>渲染器（Renderer）</h2>
+          <p> &nbsp;&nbsp;&nbsp;&nbsp; 渲染器的作用是将Camera能够观察到的物体绘制(渲染)出来，使我们可以在显示器中能够观察到图形元素 </p>
+        </li>
+      </ol>
     </section>
 
     <section class="slide" id="markup">
