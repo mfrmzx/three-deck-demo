@@ -38,7 +38,7 @@
     <script src="./js/modernizr.custom.js"></script>
 </head>
 
-<body>
+<body class="language-javascript">
 <div class="deck-container">
 
     <!-- Begin slides -->
@@ -69,8 +69,8 @@
     </section>
 
     <section class="slide">
-        <h2>three.js组件</h2>
-        <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景，相机，渲染器，几何对象，灯光，材料，动画等等</p>
+        <h2>three.js基础组件</h2>
+        <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景，相机，渲染器，几何对象，灯光，材料，动画以及辅助工具等等</p>
         <ol>
             <li>
                 <h3>相机（Camera）</h3>
@@ -82,105 +82,168 @@
             </li>
             <li>
                 <h3>渲染器（Renderer）</h3>
-                <p> &nbsp;&nbsp;&nbsp;&nbsp; 渲染器的作用是将Camera能够观察到的物体绘制(渲染)出来，使我们可以在显示器中能够观察到图形元素 </p>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp; 渲染器的作用是将相机能够观察到的物体绘制(渲染)出来，使我们可以在显示器中能够观察到图形元素 </p>
             </li>
         </ol>
     </section>
 
     <section class="slide">
-        <div class="page-cover">
-            <h1 class="cover-title">搭建一个简单的3D场景</h1>
-        </div>
-        <img src="images/orbit-all-the-things.jpg" alt="" class="spotlight">
+        <img src="images/小目标.jpg" alt="" class="spotlight">
     </section>
 
     <section class="slide">
         <iframe src="iframes/getting-started.html" frameborder="0"></iframe>
     </section>
 
-    <section class="slide" id="extensions">
-        <ul>
-            <li class="slide">
-                <h3>页面加载three.js</h3>
+    <section class="slide">
+        <ol>
+            <li>
+                <h2>页面加载three.js</h2>
                 <pre class="overlay-full language-markup"><code style="font-size: 32px;">
                     &lt;script src="js/three.min.js"&gt;&lt;/script&gt;
                 </code></pre>
             </li>
 
             <li class="slide">
-                <h3>创建场景，相机，以及渲染器</h3>
-                <pre><code>
+                <h2>创建场景，相机，以及渲染器</h2>
+                <pre><code style="font-size: 32px;">
+                    //创建场景
+                    var scene = new THREE.Scene();
 
+                    //相机可见区域高宽比
+                    var aspect = window.innerWidth / window.innerHeight;
+                    //创建相机
+                    var camera = new THREE.PerspectiveCamera( 75, aspect, 0.1, 1000 );
+                    //设置相机位置
+                    camera.position.z = 5;
+
+                    //创建渲染器
+                    var renderer = new THREE.WebGLRenderer();
+                    //设置渲染区域的高和宽
+                    renderer.setSize( window.innerWidth, window.innerHeight );
+                    //将渲染器添加到浏览器指定区域
+                    document.body.appendChild( renderer.domElement );
                 </code></pre>
             </li>
+        </ol>
+    </section>
 
+    <section class="slide">
+        <ol>
+            <li>
+                <h2>添加正方体</h2>
+                <pre><code style="font-size: 32px;">
+                    //创建一个正方体几何模型
+                    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+                    //创建法向量网孔材料
+                    var material = new THREE.MeshNormalMaterial();
+                    //将几何模型和材料合并生成最终的正方体
+                    var cube = new THREE.Mesh( geometry, material );
+                    //将正方体添加到场景中
+                    scene.add( cube );
+                </code></pre>
+            </li>
             <li class="slide">
-                <h3>添加正方体</h3>
-                <pre><code>
-
+                <h2>制作动画</h2>
+                <pre><code style="font-size: 32px;">
+                    var render = function () {
+                        //旋转
+                        cube.rotation.x += 0.1;
+                        cube.rotation.y += 0.1;
+                        //将相机和场景添加到渲染器，开始渲染
+                        renderer.render( scene, camera );
+                        //递归调用
+                        requestAnimationFrame( render );
+                    };
+                    //开始动画
+                    render();
                 </code></pre>
             </li>
-
-            <li class="slide">
-                <h3>制作动画</h3>
-                <pre><code>
-
-                </code></pre>
-            </li>
-        </ul>
+        </ol>
     </section>
 
-    <section class="slide" id="nested">
-        <h2>Nested Slides</h2>
-        <p>That last slide had a few steps. To create substeps in slides, just nest them:</p>
-        <pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li class=&quot;slide&quot;&gt;
-      &lt;h3&gt;deck.goto&lt;/h3&gt;
-      &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-    &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-    &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
+    <section class="slide">
+        <h2>three.js各组件之间的关系</h2>
+        <img src="images/node-map.png" alt="Kitties" width="80%" height="80%">
     </section>
 
-    <section class="slide" id="elements-images">
-        <h2>Other Elements: Images</h2>
-        <img src="http://placekitten.com/600/375" alt="Kitties">
-        <pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
+    <section class="slide instant">
+        <iframe src="iframes/camera.html" frameborder="0" id="camera-demo"></iframe>
+        <h2 style="position: relative;">相机（Cameras）</h2>
+        <div class="temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>camera.fov = 15</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>camera.fov = 60</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>camera.far = 1000</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>camera.far = 3000</code></pre></div>
+        <div class="slide temp abs-bc"><pre style="font-size: 26px;"><code style="font-size: 26px;">camera = new THREE.OrthographicCamera( left, right, top, bottom, near, far );</code></pre></div>
     </section>
 
-    <section class="slide" id="elements-blockquotes">
-        <h2>Other Elements: Blockquotes</h2>
-        <blockquote cite="http://example.org">
-            <p>Food is an important part of a balanced diet.</p>
-            <p><cite>Fran Lebowitz</cite></p>
-        </blockquote>
-        <pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
-  &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
+    <section class="slide instant">
+        <iframe src="iframes/transforms.html" frameborder="0"></iframe>
+        <h2>几何模型位置参数设置</h2>
+        <div class="temp abs-bc"><pre><code>mesh.position.x = 0</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.position.x = -100</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.scale.set(2,2,2)</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI / 4</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre></div>
     </section>
 
+    <section class="slide">
+        <h2>Geometry</h2>
+        <iframe src="iframes/geometry.html" frameborder="0"></iframe>
+        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.BoxGeometry( width, height, depth );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.SphereGeometry( 60, 24, 16 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.CylinderGeometry( ... );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.TorusGeometry( ... );</code></pre></div>
+    </section>
 
-    <section class="slide" id="elements-videos">
-        <h2>Other Elements: Video Embeds</h2>
-        <p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
+    <section class="slide">
+        <h2>Materials</h2>
+        <iframe src="iframes/material.html" frameborder="0"></iframe>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshBasicMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshLambertMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshPhongMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshStandardMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshToonMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshNormalMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshNormalMaterial({ ... });</code></pre></div>
+    </section>
 
-        <iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225"
-                frameborder="0"></iframe>
-
-        <pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
+    <section class="slide">
+        <h2>Lights</h2>
+        <iframe src="iframes/lights.html" frameborder="0"></iframe>
+        <div class="temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.position.set( -80, 80, 80 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.position.x = 80;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.target.position = 160;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.position.x = -80;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.8 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.2 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 1.5 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.8 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.PointLight( 0xb4e7f2, 0.8 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.PointLight( 0xb4e7f2, 0.8 );</code></pre></div>
+        <!-- <div class="slide temp abs-bc"><pre><code>light.distance = 300;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.distance = 0;</code></pre></div> -->
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.SpotLight( 0xb4e7f2, 0.8 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.angle = Math.PI / 9;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.angle = Math.PI / 5;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.penumbra = 0.4;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.penumbra = 0;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light.penumbra = 0.8;</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.AmbientLight( 0x444444 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.AmbientLight( 0x000000 );</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>light = new THREE.AmbientLight( 0x444444 );</code></pre></div>
     </section>
 
     <section class="slide" id="digging-deeper">
-        <h2>Digging Deeper</h2>
-        <p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a
-                href="./docs/">documentation</a>.</p>
+        <iframe src="iframes/three_game.html" frameborder="0"></iframe>
+        <div align="center">
+            <h2>Thank You!</h2>
+        </div>
     </section>
 
     <!-- deck.navigation snippet -->
@@ -214,6 +277,9 @@
 <script src="./extensions/status/deck.status.js"></script>
 <script src="./extensions/navigation/deck.navigation.js"></script>
 <script src="./extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script src="js/slides.js"></script>
 
 <!-- Initialize the deck -->
 <script>
