@@ -1,142 +1,139 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>ThreeJS分享</title>
+    <title>ThreeJS分享</title>
 
-  <meta name="author" content="mzx">
-  <meta name="viewport" content="width=1024, user-scalable=no">
+    <meta name="author" content="mzx">
+    <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <!-- Core and extension CSS files -->
-  <link rel="stylesheet" media="screen" href="./core/deck.core.css">
-  <link rel="stylesheet" media="screen" href="./extensions/goto/deck.goto.css">
-  <link rel="stylesheet" media="screen" href="./extensions/menu/deck.menu.css">
-  <link rel="stylesheet" media="screen" href="./extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" media="screen" href="./extensions/status/deck.status.css">
-  <link rel="stylesheet" media="screen" href="./extensions/scale/deck.scale.css">
+    <!-- Core and extension CSS files -->
+    <link rel="stylesheet" media="screen" href="./core/deck.core.css">
+    <link rel="stylesheet" media="screen" href="./extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="./extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="./extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="./extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="./extensions/scale/deck.scale.css">
 
-  <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="./themes/style/web-2.0.css">
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="./themes/style/web-2.0.css">
 
-  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="./themes/transition/horizontal-slide.css">
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="./themes/transition/horizontal-slide.css">
 
-  <!-- Basic black and white print styles -->
-  <link rel="stylesheet" media="print" href="./core/print.css">
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="./core/print.css">
 
-  <script src="./js/modernizr.custom.js"></script>
+    <link rel="stylesheet" media="screen" href="./themes/theme.css">
+
+    <script src="./js/modernizr.custom.js"></script>
 </head>
 
 <body>
-  <div class="deck-container">
+<div class="deck-container">
 
     <!-- Begin slides -->
     <section class="slide">
-      <h1>three.js分享</h1>
+        <iframe src="iframes/cube-title.html" frameborder="0"></iframe>
+        <div class="page-cover">
+            <h1 class="cover-title">three.js分享</h1>
+        </div>
     </section>
 
     <section class="slide">
-      <h2>three.js简介</h2>
-      <ol>
-        <li>
-          <h2>WEBGL</h2>
-          <p> &nbsp;&nbsp;&nbsp;&nbsp;WebGL（Web Graphics Library ）是一种 3D 绘图标准，这种绘图技术标准允许把 JavaScript 和 OpenGL ES 2.0 结合在一起，通过增加 OpenGL ES 2.0 的一个 JavaScript 绑定， WebGL 可以为 HTML5 Canvas 提供硬件 3D 加速渲染，这样开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型。</p>
-        </li>
-        <li>
-          <h2>ThreeJS</h2>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;three.js是一个javascript的开源三维引擎。three.js对WebGL以面向对象方式进行了封装，使得开发人员可以不用再关注底层的3D图形渲染的细节，利用three.js提供的API就可以很容易的创建出各种三维场景。</p>
-        </li>
-        <li>
-          <h2>ThreeJS学习网址</h2>
-          <p><a href="http://techbrood.com/threejs/docs/">http://techbrood.com/threejs/docs/</a></p>
-        </li>
-      </ol>
+        <h2>three.js简介</h2>
+        <ol>
+            <li>
+                <h2 style="margin-left: 10px">WEBGL</h2>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;WebGL（Web Graphics Library ）是一种用于呈现交互式2D和3D图形的JavaScript API，WebGL 可以为 HTML5
+                    Canvas 提供硬件 3D 加速渲染，这样开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型。</p>
+            </li>
+            <li>
+                <h2>ThreeJS</h2>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;three.js是一个javascript的开源三维引擎。three.js对WebGL以面向对象方式进行了封装，使得开发人员可以不用再关注底层的3D图形渲染的细节，利用three.js提供的API就可以很容易的创建出各种三维场景。</p>
+            </li>
+        </ol>
     </section>
 
     <section class="slide">
-      <h2>three.js三大组件</h2>
-      <ol>
-        <li>
-          <h2>相机（Camera）</h2>
-          <p> &nbsp;&nbsp;&nbsp;&nbsp; 相机类似于我们的眼睛，它的作用是定义可视域，即确定哪些图形元素是可见的</p>
-        </li>
-        <li>
-          <h2>场景(Scene)</h2>
-          <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景类似于我们所处世界，相当于一个容器，可以用来容纳各种图形元素,图形元素只有添加到场景中，其坐标、大小等才有意义。</p>
-        </li>
-        <li>
-          <h2>渲染器（Renderer）</h2>
-          <p> &nbsp;&nbsp;&nbsp;&nbsp; 渲染器的作用是将Camera能够观察到的物体绘制(渲染)出来，使我们可以在显示器中能够观察到图形元素 </p>
-        </li>
-      </ol>
+        <iframe src="https://threejs.org" frameborder="0"></iframe>
     </section>
 
-    <section class="slide" id="markup">
-      <h2>The Markup</h2>
-      <p>Slides are just HTML elements with a class of <code>slide</code>.</p>
-      <pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;h3&gt;Write Slides&lt;/h3&gt;
-      &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;h3&gt;Choose Themes&lt;/h3&gt;
-      &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-    &lt;/li&gt;
-    &hellip;
-  &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
+    <section class="slide">
+        <h2>three.js组件</h2>
+        <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景，相机，渲染器，几何对象，灯光，材料，动画等等</p>
+        <ol>
+            <li>
+                <h3>相机（Camera）</h3>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp; 相机类似于我们的眼睛，它的作用是定义可视域，即确定哪些图形元素是可见的</p>
+            </li>
+            <li>
+                <h3>场景(Scene)</h3>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景类似于我们所处世界，相当于一个容器，可以用来容纳各种图形元素,图形元素只有添加到场景中，其坐标、大小等才有意义。</p>
+            </li>
+            <li>
+                <h3>渲染器（Renderer）</h3>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp; 渲染器的作用是将Camera能够观察到的物体绘制(渲染)出来，使我们可以在显示器中能够观察到图形元素 </p>
+            </li>
+        </ol>
     </section>
 
-    <section class="slide" id="themes">
-      <h2>Style Themes</h2>
-      <p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-      <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-      <h2>Transition Themes</h2>
-      <p>Defines transitions between slides using CSS3 transitions.  Less capable browsers fall back to cutaways. But <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;</p>
-      <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
+    <section class="slide">
+        <div class="page-cover">
+            <h1 class="cover-title">搭建一个简单的3D场景</h1>
+        </div>
+        <img src="images/orbit-all-the-things.jpg" alt="" class="spotlight">
+    </section>
+
+    <section class="slide">
+        <iframe src="iframes/getting-started.html" frameborder="0"></iframe>
     </section>
 
     <section class="slide" id="extensions">
-      <h2>Extensions</h2>
-      <p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
+        <ul>
+            <li class="slide">
+                <h3>页面加载three.js</h3>
+                <pre class="overlay-full language-markup"><code style="font-size: 32px;">
+                    &lt;script src="js/three.min.js"&gt;&lt;/script&gt;
+                </code></pre>
+            </li>
 
-      <ul>
-        <li class="slide" id="extensions-goto">
-          <strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
-        </li>
+            <li class="slide">
+                <h3>创建场景，相机，以及渲染器</h3>
+                <pre><code>
 
-        <li class="slide" id="extensions-menu">
-          <strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
-        </li>
+                </code></pre>
+            </li>
 
-        <li class="slide" id="extensions-navigation">
-          <strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-        </li>
+            <li class="slide">
+                <h3>添加正方体</h3>
+                <pre><code>
 
-        <li class="slide" id="extensions-status">
-          <strong>deck.status</strong>: Adds a page number indicator. (current/total)
-        </li>
+                </code></pre>
+            </li>
 
-        <li class="slide" id="extensions-scale">
-          <strong>deck.scale</strong>: Scales each slide to fit within the deck container using CSS Transforms for those browsers that support them.
-        </li>
-      </ul>
+            <li class="slide">
+                <h3>制作动画</h3>
+                <pre><code>
 
-      <p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
+                </code></pre>
+            </li>
+        </ul>
     </section>
 
     <section class="slide" id="nested">
-      <h2>Nested Slides</h2>
-      <p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
-      <pre><code>&lt;section class=&quot;slide&quot;&gt;
+        <h2>Nested Slides</h2>
+        <p>That last slide had a few steps. To create substeps in slides, just nest them:</p>
+        <pre><code>&lt;section class=&quot;slide&quot;&gt;
   &lt;h2&gt;Extensions&lt;/h2&gt;
   &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;
   &lt;ul&gt;
@@ -152,18 +149,18 @@
     </section>
 
     <section class="slide" id="elements-images">
-      <h2>Other Elements: Images</h2>
-      <img src="http://placekitten.com/600/375" alt="Kitties">
-      <pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
+        <h2>Other Elements: Images</h2>
+        <img src="http://placekitten.com/600/375" alt="Kitties">
+        <pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
     </section>
 
     <section class="slide" id="elements-blockquotes">
-      <h2>Other Elements: Blockquotes</h2>
-      <blockquote cite="http://example.org">
-        <p>Food is an important part of a balanced diet.</p>
-        <p><cite>Fran Lebowitz</cite></p>
-      </blockquote>
-      <pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
+        <h2>Other Elements: Blockquotes</h2>
+        <blockquote cite="http://example.org">
+            <p>Food is an important part of a balanced diet.</p>
+            <p><cite>Fran Lebowitz</cite></p>
+        </blockquote>
+        <pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
   &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
   &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</code></pre>
@@ -171,40 +168,42 @@
 
 
     <section class="slide" id="elements-videos">
-      <h2>Other Elements: Video Embeds</h2>
-      <p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
+        <h2>Other Elements: Video Embeds</h2>
+        <p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
 
-      <iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
+        <iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225"
+                frameborder="0"></iframe>
 
-      <pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
+        <pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
     </section>
 
     <section class="slide" id="digging-deeper">
-      <h2>Digging Deeper</h2>
-      <p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a href="./docs/">documentation</a>.</p>
+        <h2>Digging Deeper</h2>
+        <p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a
+                href="./docs/">documentation</a>.</p>
     </section>
 
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
-      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
     </div>
 
     <!-- deck.status snippet -->
     <p class="deck-status" aria-role="status">
-      <span class="deck-status-current"></span>
-      /
-      <span class="deck-status-total"></span>
+        <span class="deck-status-current"></span>
+        /
+        <span class="deck-status-total"></span>
     </p>
 
     <!-- deck.goto snippet -->
     <form action="." method="get" class="goto-form">
-      <label for="goto-slide">Go to slide:</label>
-      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-      <datalist id="goto-datalist"></datalist>
-      <input type="submit" value="Go">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
     </form>
-  </div>
+</div>
 
 <script src="./js/jquery-3.2.1.min.js"></script>
 
@@ -218,9 +217,9 @@
 
 <!-- Initialize the deck -->
 <script>
-$(function() {
-  $.deck('.slide');
-});
+    $(function () {
+        $.deck('.slide');
+    });
 </script>
 
 </body>
