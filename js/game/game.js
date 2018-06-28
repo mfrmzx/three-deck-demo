@@ -171,7 +171,9 @@ function normalize(v,vmin,vmax,tmin, tmax){
 var stats;
 function initStats() {
     stats = new Stats();
-    document.body.appendChild(stats.dom);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
 }
 
 //参数调节工具
