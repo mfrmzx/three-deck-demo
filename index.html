@@ -217,24 +217,16 @@
         <iframe class="iframe-top" src="iframes/transforms.html" frameborder="0"></iframe>
         <h2>几何模型参数设置</h2>
         <div class="temp abs-bc">
-            <pre><code>
-                mesh.position.x = 0
-            </code></pre>
+            <pre><code>mesh.position.x = 0</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                mesh.position.x = -100
-            </code></pre>
+            <pre><code>mesh.position.x = -100</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                mesh.scale.set(2,2,2)
-            </code></pre>
+            <pre><code>mesh.scale.set(2,2,2)</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                mesh.rotation.y = Math.PI * 5 / 4
-            </code></pre>
+            <pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre>
         </div>
     </section>
 
@@ -242,40 +234,22 @@
         <iframe class="iframe-top" src="iframes/material.html" frameborder="0"></iframe>
         <h2>材料（Materials）</h2>
         <div class="slide temp abs-bc">
-            <pre><code>
-                //基础网孔材料
-                var material = new THREE.MeshBasicMaterial({ ... });
-            </code></pre>
+            <pre><code>var material = new THREE.MeshBasicMaterial({ ... }); //基础网孔材料</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                //兰伯特网孔材料
-                var material = new THREE.MeshLambertMaterial({ ... });
-            </code></pre>
+            <pre><code>var material = new THREE.MeshLambertMaterial({ ... }); //兰伯特网孔材料</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                var material = new THREE.MeshPhongMaterial({ ... });
-
-            </code></pre>
+            <pre><code>var material = new THREE.MeshPhongMaterial({ ... });</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                //标注网孔材料
-                var material = new THREE.MeshStandardMaterial({ ... });
-            </code></pre>
+            <pre><code>var material = new THREE.MeshStandardMaterial({ ... }); //标注网孔材料</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                var material = new THREE.MeshToonMaterial({ ... });
-
-            </code></pre>
+            <pre><code>var material = new THREE.MeshToonMaterial({ ... });</code></pre>
         </div>
         <div class="slide temp abs-bc">
-            <pre><code>
-                //法向量网孔材料
-                var material = new THREE.MeshNormalMaterial({ ... });
-            </code></pre>
+            <pre><code>var material = new THREE.MeshNormalMaterial({ ... }); //法向量网孔材料</code></pre>
         </div>
     </section>
 
@@ -283,22 +257,13 @@
         <h2>纹理贴图</h2>
         <iframe src="iframes/UVs.html" frameborder="0"></iframe>
         <div class="slide temp abs-bc">
-          <pre><code>
-              var loader = new THREE.TextureLoader();
-              var texture = loader.load("color-map.jpg");
-          </code></pre>
+          <pre><code>var texture = new THREE.TextureLoader().load("color-map.jpg");</code></pre>
         </div>
         <div class="slide temp abs-bc">
-          <pre><code>
-              //创建带纹理的材料
-              var material  = new THREE.MeshBasicMaterial( { color: 0xffffff, map: whiteMap } );
-          </code></pre>
+          <pre><code>var material  = new THREE.MeshBasicMaterial( { color: 0xffffff, map: whiteMap } );//创建带纹理的材料</code></pre>
         </div>
         <div class="slide temp abs-bc">
-          <pre><code>
-              //将几何模型和材料合并生成最终的地球仪
-              var cube = new THREE.Mesh( geometry, material );
-          </code></pre>
+          <pre><code>var cube = new THREE.Mesh( geometry, material );//几何模型和材料合成</code></pre>
         </div>
     </div>
 
@@ -369,7 +334,6 @@
     </section>
 
     <section class="slide">
-        <h2>three.js组件介绍</h2>
         <ol>
             <li>
                 <h2>性能监测组件Stats</h2>
@@ -381,14 +345,11 @@
                     var stats = new Stats();
                     //添加到页面渲染区域
                     document.body.appendChild(stats.dom);
-
                     ...
-
                     var render = function () {
                         ...
                         //启动stats
                         stats.update();
-
                         requestAnimationFrame( render );
                     };
                 </code></pre>
@@ -404,7 +365,6 @@
                         this.rotationSpeed = 0.02;
                         //......
                     };
-
                     //将这个 JavaScript 对象传递给 dat.gui 对象，并设置取值范围
                     var gui = new dat.GUI();
                     gui.add(controls, 'rotationSpeed', 0, 1);

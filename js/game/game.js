@@ -10,6 +10,12 @@ $(function () {
     animate();
 });
 
+var controls = new function () {
+    this.飞机螺旋桨速度 = 0.25;
+    this.背景云朵速度 = 0.01;
+    //......
+};
+
 //渲染器
 var renderer;
 var width, height;
@@ -134,14 +140,9 @@ function render() {
     airPlane.pilot.updateHairs();
     updateCameraFov();
     sea.moveWaves();
-    sky.mesh.rotation.z += 0.01;
+    sky.mesh.rotation.z += controls.背景云朵速度;
     renderer.render(scene, camera);
 }
-
-var controls = new function () {
-    this.rotationSpeed = 0.25;
-    //......
-};
 
 function updateAirPlane(){
     var x = normalize(mouseX, -0.75, 0.75, -100, 100);
@@ -150,7 +151,7 @@ function updateAirPlane(){
     airPlane.mesh.position.y += (y - airPlane.mesh.position.y)*0.1;
     airPlane.mesh.rotation.z = (y - airPlane.mesh.position.y)*0.0128;
     airPlane.mesh.rotation.x = (airPlane.mesh.position.y - y)*0.0064;
-    airPlane.propeller.rotation.x += controls.rotationSpeed;
+    airPlane.propeller.rotation.x += controls.飞机螺旋桨速度;
 }
 
 function updateCameraFov(){
@@ -176,7 +177,8 @@ function initStats() {
 //参数调节工具
 function initGUI() {
     var gui = new dat.GUI();
-    gui.add(controls, 'rotationSpeed', 0, 0.5);
+    gui.add(controls, '飞机螺旋桨速度', 0, 1);
+    gui.add(controls, '背景云朵速度', 0, 1);
 }
 
 //监听器
