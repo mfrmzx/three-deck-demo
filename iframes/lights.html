@@ -265,32 +265,24 @@
           setupTween(dLight.target.position, 'x', 0);
         }
         else if (step == 4) {
-          setupTween(dLight.target.position, 'x', 160);
-          setupTween(dLight.position, 'x', 80);
-        }
-        else if (step == 5) {
-          setupTween(dLight.position, 'x', -80);
-          setupTween(dLight.target.position, 'x', 0);
-        }
-        else if (step == 6) {
           setupTween(dLight.color, 'r', white.r);
           setupTween(dLight.color, 'g', white.g);
           setupTween(dLight.color, 'b', white.b);
         }
-        else if (step == 7) {
+        else if (step == 5) {
           setupTween(dLight.color, 'r', lightBlue.r);
           setupTween(dLight.color, 'g', lightBlue.g);
           setupTween(dLight.color, 'b', lightBlue.b);
         
           setupTween(dLight, 'intensity', 0.8);
         }
-        else if (step == 8) {
+        else if (step == 6) {
           setupTween(dLight, 'intensity', 0.2);
         }
-        else if (step == 9) {
+        else if (step == 7) {
           setupTween(dLight, 'intensity', 1.5);
         }
-        else if (step == 10) {
+        else if (step == 8) {
           setupTween(dLight, 'intensity', 0.8);
 
           dLight.visible = true;
@@ -299,7 +291,7 @@
           pLightHelper.visible = false;
           material.needsUpdate = true;
         }
-        else if (step == 11) {
+        else if (step == 9) {
           dLight.visible = false;
           pLight.visible = true;
           dLightHelper.visible = false;
@@ -310,7 +302,7 @@
           setupTween(pLight.position, 'y',  80);
           setupTween(pLight.position, 'z',  80);
         }
-        else if (step == 12) {
+        else if (step == 10) {
           setupTween(pLight.position, 'x', 50);
           setupTween(pLight.position, 'y',  30);
           setupTween(pLight.position, 'z',  75);
@@ -321,41 +313,41 @@
           sLightHelper.visible = false;
           material.needsUpdate = true;
         }
-        else if (step == 13) {
+        else if (step == 11) {
           pLight.visible = false;
           sLight.visible = true;
           pLightHelper.visible = false;
           sLightHelper.visible = true;
           material.needsUpdate = true;
         }
-        else if (step == 14) {
+        else if (step == 12) {
           setupTween(sLight, 'angle', Math.PI/9);
         }
-        else if (step == 15) {
+        else if (step == 13) {
           setupTween(sLight, 'angle', Math.PI/5); // should be no more than Math.PI/2
         }
-        else if (step == 16) {
+        else if (step == 14) {
           setupTween(sLight, 'penumbra', 0.4);
         }
-        else if (step == 17) {
+        else if (step == 15) {
           setupTween(sLight, 'penumbra', 0);
         }
-        else if (step == 18) {
+        else if (step == 16) {
           setupTween(sLight, 'penumbra', 0.8);
           sLightHelper.visible = true;
         }
-        else if (step == 19) {
+        else if (step == 17) {
           sLightHelper.visible = false;
           setupTween(ambLight.color, 'r', darkGrey.r);
           setupTween(ambLight.color, 'g', darkGrey.g);
           setupTween(ambLight.color, 'b', darkGrey.b);
         }
-        else if (step == 20) {
+        else if (step == 18) {
           setupTween(ambLight.color, 'r', black.r);
           setupTween(ambLight.color, 'g', black.g);
           setupTween(ambLight.color, 'b', black.b);
         }
-        else if (step == 21) {
+        else if (step == 19) {
           setupTween(ambLight.color, 'r', darkGrey.r);
           setupTween(ambLight.color, 'g', darkGrey.g);
           setupTween(ambLight.color, 'b', darkGrey.b);
@@ -370,7 +362,7 @@
 
       function forward() {
         step++;
-        if (step > 24) { step = 24; return; }
+        if (step > 19) { step = 19; return; }
         applyStep(step);
       }
 

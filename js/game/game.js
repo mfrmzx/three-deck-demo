@@ -6,6 +6,7 @@ $(function () {
     initObject();
     initListener();
     initStats();
+    initGUI();
     animate();
 });
 
@@ -137,6 +138,11 @@ function render() {
     renderer.render(scene, camera);
 }
 
+var controls = new function () {
+    this.rotationSpeed = 0.25;
+    //......
+};
+
 function updateAirPlane(){
     var x = normalize(mouseX, -0.75, 0.75, -100, 100);
     var y = normalize(mouseY, -0.75, 0.75, 25, 175);
@@ -144,7 +150,7 @@ function updateAirPlane(){
     airPlane.mesh.position.y += (y - airPlane.mesh.position.y)*0.1;
     airPlane.mesh.rotation.z = (y - airPlane.mesh.position.y)*0.0128;
     airPlane.mesh.rotation.x = (airPlane.mesh.position.y - y)*0.0064;
-    airPlane.propeller.rotation.x += 0.3;
+    airPlane.propeller.rotation.x += controls.rotationSpeed;
 }
 
 function updateCameraFov(){
@@ -165,6 +171,12 @@ var stats;
 function initStats() {
     stats = new Stats();
     document.body.appendChild(stats.dom);
+}
+
+//参数调节工具
+function initGUI() {
+    var gui = new dat.GUI();
+    gui.add(controls, 'rotationSpeed', 0, 0.5);
 }
 
 //监听器

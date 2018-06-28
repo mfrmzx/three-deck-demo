@@ -67,6 +67,9 @@
 
     <section class="slide">
         <iframe src="https://threejs.org" frameborder="0"></iframe>
+        <div align="center">
+            <h2 style="font-size: 24px;">https://threejs.org</h2>
+        </div>
     </section>
 
     <section class="slide">
@@ -74,17 +77,17 @@
         <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景，相机，渲染器，几何对象，灯光，材料，动画以及辅助工具等等</p>
         <ol>
             <li>
-                <h3>相机（Camera）</h3>
+                <h2>相机（Camera）</h2>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp; 相机类似于我们的眼睛，它的作用是定义可视域，即确定哪些图形元素是可见的</p>
                 <br>
             </li>
             <li>
-                <h3>场景(Scene)</h3>
+                <h2>场景(Scene)</h2>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景类似于我们所处世界，相当于一个容器，可以用来容纳各种图形元素,图形元素只有添加到场景中，其坐标、大小等才有意义。</p>
                 <br>
             </li>
             <li>
-                <h3>渲染器（Renderer）</h3>
+                <h2>渲染器（Renderer）</h2>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp; 渲染器的作用是将相机能够观察到的物体绘制(渲染)出来，使我们可以在显示器中能够观察到图形元素 </p>
             </li>
         </ol>
@@ -173,80 +176,249 @@
     <section class="slide">
         <iframe class="iframe-top" src="iframes/camera.html" frameborder="0"></iframe>
         <h2>相机（Cameras）</h2>
-        <div class="temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>camera.fov = 15</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>camera.fov = 60</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>camera.far = 1000</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>camera.far = 3000</code></pre></div>
-        <div class="slide temp abs-bc"><pre style="font-size: 26px;"><code style="font-size: 26px;">camera = new THREE.OrthographicCamera( left, right, top, bottom, near, far );</code></pre></div>
+        <div class="temp abs-bc">
+            <pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>camera.fov = 15</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>camera.fov = 60</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>camera.far = 1000</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>camera.far = 3000</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre style="font-size: 26px;"><code style="font-size: 26px;">camera = new THREE.OrthographicCamera( left, right, top, bottom, near, far );</code></pre>
+        </div>
     </section>
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/geometry.html" frameborder="0"></iframe>
-        <h2>几何对象（Geometry）</h2>
-        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.BoxGeometry( width, height, depth );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.SphereGeometry( 60, 24, 16 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.CylinderGeometry( ... );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var geo = new THREE.TorusGeometry( ... );</code></pre></div>
+        <h2>几何模型（Geometry）</h2>
+        <div class="slide temp abs-bc">
+            <pre><code>var geo = new THREE.BoxGeometry( width, height, depth );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>var geo = new THREE.SphereGeometry( 60, 24, 16 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>var geo = new THREE.CylinderGeometry( ... );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>var geo = new THREE.TorusGeometry( ... );</code></pre>
+        </div>
     </section>
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/transforms.html" frameborder="0"></iframe>
-        <h2>几何对象位置参数设置</h2>
-        <div class="temp abs-bc"><pre><code>mesh.position.x = 0</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.position.x = -100</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.scale.set(2,2,2)</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI / 4</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre></div>
+        <h2>几何模型参数设置</h2>
+        <div class="temp abs-bc">
+            <pre><code>
+                mesh.position.x = 0
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                mesh.position.x = -100
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                mesh.scale.set(2,2,2)
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                mesh.rotation.y = Math.PI * 5 / 4
+            </code></pre>
+        </div>
     </section>
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/material.html" frameborder="0"></iframe>
         <h2>材料（Materials）</h2>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshBasicMaterial({ ... });</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshLambertMaterial({ ... });</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshPhongMaterial({ ... });</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshStandardMaterial({ ... });</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshToonMaterial({ ... });</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshNormalMaterial({ ... });</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshNormalMaterial({ ... });</code></pre></div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                //基础网孔材料
+                var material = new THREE.MeshBasicMaterial({ ... });
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                //兰伯特网孔材料
+                var material = new THREE.MeshLambertMaterial({ ... });
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                var material = new THREE.MeshPhongMaterial({ ... });
+
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                //标注网孔材料
+                var material = new THREE.MeshStandardMaterial({ ... });
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                var material = new THREE.MeshToonMaterial({ ... });
+
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                //法向量网孔材料
+                var material = new THREE.MeshNormalMaterial({ ... });
+            </code></pre>
+        </div>
     </section>
+
+    <div class="slide">
+        <h2>纹理贴图</h2>
+        <iframe src="iframes/UVs.html" frameborder="0"></iframe>
+        <div class="slide temp abs-bc">
+          <pre><code>
+              var loader = new THREE.TextureLoader();
+              var texture = loader.load("color-map.jpg");
+          </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+          <pre><code>
+              //创建带纹理的材料
+              var material  = new THREE.MeshBasicMaterial( { color: 0xffffff, map: whiteMap } );
+          </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+          <pre><code>
+              //将几何模型和材料合并生成最终的地球仪
+              var cube = new THREE.Mesh( geometry, material );
+          </code></pre>
+        </div>
+    </div>
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/lights.html" frameborder="0"></iframe>
         <h2>光源（Lights）</h2>
-        <div class="temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.position.set( -80, 80, 80 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.position.x = 80;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.target.position = 160;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.position.x = -80;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.8 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.2 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 1.5 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.8 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.PointLight( 0xb4e7f2, 0.8 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.PointLight( 0xb4e7f2, 0.8 );</code></pre></div>
-        <!-- <div class="slide temp abs-bc"><pre><code>light.distance = 300;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.distance = 0;</code></pre></div> -->
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.SpotLight( 0xb4e7f2, 0.8 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.angle = Math.PI / 9;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.angle = Math.PI / 5;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.penumbra = 0.4;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.penumbra = 0;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light.penumbra = 0.8;</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.AmbientLight( 0x444444 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.AmbientLight( 0x000000 );</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>light = new THREE.AmbientLight( 0x444444 );</code></pre></div>
+        <div class="temp abs-bc">
+            <pre><code>
+                light = new THREE.DirectionalLight( 0xdddddd, 0.8 ); //平行光
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.position.set( -80, 80, 80 ); //设置光源位置</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.position.x = 80;</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.8 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.2 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 1.5 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.DirectionalLight( 0xb4e7f2, 0.8 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>
+                light = new THREE.PointLight( 0xb4e7f2, 0.8 ); //点光源
+            </code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.PointLight( 0xb4e7f2, 0.8 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.SpotLight( 0xb4e7f2, 0.8 ); //聚光光源</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.angle = Math.PI / 9; //光照角度</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.angle = Math.PI / 5;</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.penumbra = 0.4; //光锥半影衰减百分比</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.penumbra = 0;</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light.penumbra = 0.8;</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.AmbientLight( 0x444444 ); //环境光</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.AmbientLight( 0x000000 );</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>light = new THREE.AmbientLight( 0x444444 );</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>three.js组件介绍</h2>
+        <ol>
+            <li>
+                <h2>性能监测组件Stats</h2>
+                <pre><code style="font-size: 32px;">
+                    &lt;script src="three/libs/stats.min.js"&gt;&lt;/script&gt;
+                </code></pre>
+                <pre><code style="font-size: 32px;">
+                    //新建一个stats对象
+                    var stats = new Stats();
+                    //添加到页面渲染区域
+                    document.body.appendChild(stats.dom);
+
+                    ...
+
+                    var render = function () {
+                        ...
+                        //启动stats
+                        stats.update();
+
+                        requestAnimationFrame( render );
+                    };
+                </code></pre>
+            </li>
+            <li class="slide">
+                <h2>参数调试组件（dat.GUI）</h2>
+                <pre><code style="font-size: 32px;">
+                    &lt;script src="three/libs/dat.gui.min.js"&gt;&lt;/script&gt;
+                </code></pre>
+                <pre><code style="font-size: 32px;">
+                    //定义一个 JavaScript 对象, 保存希望通过 dat.GUI 改变的属性
+                    var controls = new function () {
+                        this.rotationSpeed = 0.02;
+                        //......
+                    };
+
+                    //将这个 JavaScript 对象传递给 dat.gui 对象，并设置取值范围
+                    var gui = new dat.GUI();
+                    gui.add(controls, 'rotationSpeed', 0, 1);
+                </code></pre>
+            </li>
+        </ol>
     </section>
 
     <section class="slide" id="digging-deeper">
         <iframe src="iframes/three_game.html" frameborder="0"></iframe>
-        <div align="center">
-            <h2>Thank You!</h2>
-        </div>
+    </section>
+
+    <section class="slide">
+        <h1>Thank you!</h1>
     </section>
 
     <!-- deck.navigation snippet -->

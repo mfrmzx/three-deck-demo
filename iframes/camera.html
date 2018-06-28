@@ -302,30 +302,22 @@
 			  	frustum.visible = false;
 			  }
 			  else if (step == 2) {
-			  	moveFrustumVerts(topMap);
-			  	frustum.visible = true;
-			  }
-			  else if (step == 3) {
-			  	moveFrustumVerts(bottomMap);
-			  	frustum.visible = true;
-			  }
-			  else if (step == 4) {
 			  	frustum.visible = false;
 			  	setupTween(cameraPerspective, 'fov', 15 );
 			  }
-			  else if (step == 5) {
+			  else if (step == 3) {
 			  	setupTween(cameraPerspective, 'fov', 65 );
 			  }
-			  else if (step == 6) {
+			  else if (step == 4) {
 			  	setupTween(cameraPerspective, 'far', 1200 );
 			  }
-			  else if (step == 7) {
+			  else if (step == 5) {
 			  	setupTween(cameraPerspective, 'far', 3000 );
 			  	
 			  	activeCamera = cameraPerspective;
 			  	activeHelper = cameraPerspectiveHelper;
 			  }
-			  else if (step == 8) {
+			  else if (step == 6) {
 			  	activeCamera = cameraOrtho;
 			  	activeHelper = cameraOrthoHelper;
 			  }
@@ -339,7 +331,7 @@
 
 			function forward() {
 			  step++;
-			  if (step > 8) { step = 8; return; }
+			  if (step > 6) { step = 6; return; }
 			  applyStep(step);
 			}
 

@@ -218,9 +218,6 @@
           setupTween( mesh.scale, 'z', 2);
         }
         else if (step == 4) {
-          setupTween( mesh.rotation, 'y', Math.PI / 4);
-        }
-        else if (step == 5) {
           setupTween( mesh.rotation, 'y', Math.PI * 5 / 4);
            
         }
@@ -234,7 +231,7 @@
 
       function forward() {
         step++;
-        if (step > 5) { step = 5; return; }
+        if (step > 4) { step = 4; return; }
         applyStep(step);
       }
 

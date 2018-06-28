@@ -29,6 +29,10 @@ video.spotlight {
     width: 100%;
 }
 
+code {
+    color: #444444;
+}
+
 .deck-container > .slide.deck-before .temp:not(.slide),
 .deck-container > .slide.deck-previous .temp:not(.slide) {
   opacity: 0;

@@ -285,11 +285,8 @@
           setupTween( camera.position, 'x', mesh6.position.x );
           setupTween( mesh5.position, 'y', 0 );
           setupTween( mesh6.position, 'y', 20 );
-          
+
           vnh.visible = false;
-        }
-        else if (step == 8) {
-          vnh.visible = true;
         }
       }
 
@@ -301,7 +298,7 @@
 
       function forward() {
         step++;
-        if (step > 8) { step = 8; return; }
+        if (step > 7) { step = 7; return; }
         applyStep(step);
       }
 
