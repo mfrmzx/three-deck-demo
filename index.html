@@ -167,9 +167,9 @@
         <img src="images/node-map.png" alt="Kitties" width="80%" height="80%">
     </section>
 
-    <section class="slide instant">
-        <iframe src="iframes/camera.html" frameborder="0" id="camera-demo"></iframe>
-        <h2 style="position: relative;">相机（Cameras）</h2>
+    <section class="slide">
+        <iframe src="iframes/camera.html" frameborder="0"></iframe>
+        <h2>相机（Cameras）</h2>
         <div class="temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
@@ -180,18 +180,8 @@
         <div class="slide temp abs-bc"><pre style="font-size: 26px;"><code style="font-size: 26px;">camera = new THREE.OrthographicCamera( left, right, top, bottom, near, far );</code></pre></div>
     </section>
 
-    <section class="slide instant">
-        <iframe src="iframes/transforms.html" frameborder="0"></iframe>
-        <h2>几何模型位置参数设置</h2>
-        <div class="temp abs-bc"><pre><code>mesh.position.x = 0</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.position.x = -100</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.scale.set(2,2,2)</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI / 4</code></pre></div>
-        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre></div>
-    </section>
-
     <section class="slide">
-        <h2>Geometry</h2>
+        <h2>几何对象（Geometry）</h2>
         <iframe src="iframes/geometry.html" frameborder="0"></iframe>
         <div class="slide temp abs-bc"><pre><code>var geo = new THREE.BoxGeometry( width, height, depth );</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>var geo = new THREE.SphereGeometry( 60, 24, 16 );</code></pre></div>
@@ -200,7 +190,17 @@
     </section>
 
     <section class="slide">
-        <h2>Materials</h2>
+        <h2>几何对象位置参数设置</h2>
+        <iframe src="iframes/transforms.html" frameborder="0"></iframe>
+        <div class="temp abs-bc"><pre><code>mesh.position.x = 0</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.position.x = -100</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.scale.set(2,2,2)</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI / 4</code></pre></div>
+        <div class="slide temp abs-bc"><pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre></div>
+    </section>
+
+    <section class="slide">
+        <h2>材料（Materials）</h2>
         <iframe src="iframes/material.html" frameborder="0"></iframe>
         <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshBasicMaterial({ ... });</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshLambertMaterial({ ... });</code></pre></div>
@@ -212,7 +212,7 @@
     </section>
 
     <section class="slide">
-        <h2>Lights</h2>
+        <h2>光源（Lights）</h2>
         <iframe src="iframes/lights.html" frameborder="0"></iframe>
         <div class="temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>light.position.set( -80, 80, 80 );</code></pre></div>

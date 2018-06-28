@@ -15,14 +15,17 @@ video.spotlight {
     height: 100%;
 }
 
-.deck-container > .slide .deck-before.temp,
-.deck-container > .slide .deck-previous.temp,
+.abs-bc pre {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 .deck-container > .slide.deck-before .temp:not(.slide),
 .deck-container > .slide.deck-previous .temp:not(.slide) {
   opacity: 0;
   position: absolute;
 }
-.deck-container > .slide .deck-current.temp,
 .deck-container > .slide.deck-current .temp:not(.slide) {
   position: relative;
 }
