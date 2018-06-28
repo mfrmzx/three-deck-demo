@@ -56,6 +56,7 @@
                 <h2 style="margin-left: 10px">WEBGL</h2>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;WebGL（Web Graphics Library ）是一种用于呈现交互式2D和3D图形的JavaScript API，WebGL 可以为 HTML5
                     Canvas 提供硬件 3D 加速渲染，这样开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型。</p>
+                <br>
             </li>
             <li>
                 <h2>ThreeJS</h2>
@@ -75,10 +76,12 @@
             <li>
                 <h3>相机（Camera）</h3>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp; 相机类似于我们的眼睛，它的作用是定义可视域，即确定哪些图形元素是可见的</p>
+                <br>
             </li>
             <li>
                 <h3>场景(Scene)</h3>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景类似于我们所处世界，相当于一个容器，可以用来容纳各种图形元素,图形元素只有添加到场景中，其坐标、大小等才有意义。</p>
+                <br>
             </li>
             <li>
                 <h3>渲染器（Renderer）</h3>
@@ -168,7 +171,7 @@
     </section>
 
     <section class="slide">
-        <iframe src="iframes/camera.html" frameborder="0"></iframe>
+        <iframe class="iframe-top" src="iframes/camera.html" frameborder="0"></iframe>
         <h2>相机（Cameras）</h2>
         <div class="temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>cam = new THREE.PerspectiveCamera( fov, aspect, near, far )</code></pre></div>
@@ -181,8 +184,8 @@
     </section>
 
     <section class="slide">
+        <iframe class="iframe-top" src="iframes/geometry.html" frameborder="0"></iframe>
         <h2>几何对象（Geometry）</h2>
-        <iframe src="iframes/geometry.html" frameborder="0"></iframe>
         <div class="slide temp abs-bc"><pre><code>var geo = new THREE.BoxGeometry( width, height, depth );</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>var geo = new THREE.SphereGeometry( 60, 24, 16 );</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>var geo = new THREE.CylinderGeometry( ... );</code></pre></div>
@@ -190,8 +193,8 @@
     </section>
 
     <section class="slide">
+        <iframe class="iframe-top" src="iframes/transforms.html" frameborder="0"></iframe>
         <h2>几何对象位置参数设置</h2>
-        <iframe src="iframes/transforms.html" frameborder="0"></iframe>
         <div class="temp abs-bc"><pre><code>mesh.position.x = 0</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>mesh.position.x = -100</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>mesh.scale.set(2,2,2)</code></pre></div>
@@ -200,8 +203,8 @@
     </section>
 
     <section class="slide">
+        <iframe class="iframe-top" src="iframes/material.html" frameborder="0"></iframe>
         <h2>材料（Materials）</h2>
-        <iframe src="iframes/material.html" frameborder="0"></iframe>
         <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshBasicMaterial({ ... });</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshLambertMaterial({ ... });</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>var material = new THREE.MeshPhongMaterial({ ... });</code></pre></div>
@@ -212,8 +215,8 @@
     </section>
 
     <section class="slide">
+        <iframe class="iframe-top" src="iframes/lights.html" frameborder="0"></iframe>
         <h2>光源（Lights）</h2>
-        <iframe src="iframes/lights.html" frameborder="0"></iframe>
         <div class="temp abs-bc"><pre><code>light = new THREE.DirectionalLight( 0xdddddd, 0.8 );</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>light.position.set( -80, 80, 80 );</code></pre></div>
         <div class="slide temp abs-bc"><pre><code>light.position.x = 80;</code></pre></div>
