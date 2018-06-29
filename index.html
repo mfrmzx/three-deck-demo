@@ -139,11 +139,11 @@
             <li>
                 <h2>添加正方体</h2>
                 <pre><code style="font-size: 32px;">
-                    //创建一个正方体几何模型
+                    //创建一个正方体几何形状
                     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
                     //创建法向量网孔材料
                     var material = new THREE.MeshNormalMaterial();
-                    //将几何模型和材料合并生成最终的正方体
+                    //将几何形状和材料通过网格模型合并生成最终的正方体
                     var cube = new THREE.Mesh( geometry, material );
                     //将正方体添加到场景中
                     scene.add( cube );
@@ -198,7 +198,7 @@
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/geometry.html" frameborder="0"></iframe>
-        <h2>几何模型（Geometry）</h2>
+        <h2>几何对象（Geometry）</h2>
         <div class="slide temp abs-bc">
             <pre><code>var geo = new THREE.BoxGeometry( width, height, depth );</code></pre>
         </div>
@@ -215,7 +215,7 @@
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/transforms.html" frameborder="0"></iframe>
-        <h2>几何模型参数设置</h2>
+        <h2>模型参数设置</h2>
         <div class="temp abs-bc">
             <pre><code>mesh.position.x = 0</code></pre>
         </div>
