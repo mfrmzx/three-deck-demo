@@ -179,8 +179,8 @@ function initStats() {
 //参数调节工具
 function initGUI() {
     var gui = new dat.GUI();
-    gui.add(controls, '飞机螺旋桨速度', 0, 1);
-    gui.add(controls, '背景云朵速度', 0, 1);
+    gui.add(controls, '飞机螺旋桨速度', 0, 0.5);
+    gui.add(controls, '背景云朵速度', 0, 0.1);
 }
 
 //监听器
