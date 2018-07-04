@@ -13,6 +13,7 @@ $(function () {
 var controls = new function () {
     this.飞机螺旋桨速度 = 0.25;
     this.背景云朵速度 = 0.01;
+    this.光源强度 = 0.9;
     //......
 };
 
@@ -76,12 +77,12 @@ var hemisphereLight, directionalLight, ambientLight;
 function initLight() {
     // 渐变的半球光；
     // 第一个参数是天空的颜色，第二个参数是地上的颜色，第三个参数是光源的强度
-    hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.9);
+    hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, controls.光源强度);
     scene.add(hemisphereLight);
 
     // 从一个特定的方向的照射的平行光
     // 第一个参数是关系颜色，第二个参数是光源强度
-    directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
+    directionalLight = new THREE.DirectionalLight(0xffffff, controls.光源强度);
     //设置光源方向
     directionalLight.position.set(150, 350, 350);
     //开启光源阴影
@@ -99,7 +100,7 @@ function initLight() {
     scene.add(directionalLight);
 
     //添加环境光，设置颜色、光源强度
-    ambientLight = new THREE.AmbientLight(0xdc8874, 0.5);
+    ambientLight = new THREE.AmbientLight(0xdc8874, controls.光源强度*0.6);
     scene.add(ambientLight);
 }
 
@@ -136,12 +137,19 @@ function animate() {
 
 //渲染
 function render() {
+    updateLight();
     updateAirPlane();
     airPlane.pilot.updateHairs();
     updateCameraFov();
     sea.moveWaves();
     sky.mesh.rotation.z += controls.背景云朵速度;
     renderer.render(scene, camera);
+}
+
+function updateLight(){
+    hemisphereLight.intensity = controls.光源强度;
+    directionalLight.intensity = controls.光源强度;
+    ambientLight.intensity = controls.光源强度*0.6;
 }
 
 function updateAirPlane(){
@@ -181,6 +189,7 @@ function initGUI() {
     var gui = new dat.GUI();
     gui.add(controls, '飞机螺旋桨速度', 0, 0.5);
     gui.add(controls, '背景云朵速度', 0, 0.1);
+    gui.add(controls, '光源强度', 0, 1.0);
 }
 
 //监听器
