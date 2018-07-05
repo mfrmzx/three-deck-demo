@@ -74,7 +74,7 @@
 
     <section class="slide">
         <h2>three.js基础组件</h2>
-        <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景，相机，渲染器，几何对象，灯光，材料，动画以及辅助工具等等</p>
+        <p> &nbsp;&nbsp;&nbsp;&nbsp; 场景，相机，渲染器，几何对象，模型，材料，光源，动画以及辅助工具等等</p>
         <ol>
             <li>
                 <h2>相机（Camera）</h2>
@@ -145,13 +145,13 @@
                 <h2>添加正方体</h2>
                 <pre><code style="font-size: 32px;">
                     //创建一个正方体几何形状
-                    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+                    var geometry = new THREE.BoxGeometry(1, 1, 1);
                     //创建法向量网孔材料
                     var material = new THREE.MeshNormalMaterial();
                     //将几何形状和材料通过网格模型合并生成最终的正方体
-                    var cube = new THREE.Mesh( geometry, material );
+                    var cube = new THREE.Mesh(geometry, material);
                     //将正方体添加到场景中
-                    scene.add( cube );
+                    scene.add(cube);
                 </code></pre>
             </li>
             <li class="slide">
@@ -162,9 +162,9 @@
                         cube.rotation.x += 0.1;
                         cube.rotation.y += 0.1;
                         //将相机和场景添加到渲染器，开始渲染
-                        renderer.render( scene, camera );
+                        renderer.render(scene, camera);
                         //递归调用
-                        requestAnimationFrame( render );
+                        requestAnimationFrame(render);
                     };
                     //开始动画
                     render();
@@ -214,23 +214,6 @@
     </section>
 
     <section class="slide">
-        <iframe class="iframe-top" src="iframes/transforms.html" frameborder="0"></iframe>
-        <h2>模型参数设置</h2>
-        <div class="temp abs-bc">
-            <pre><code>mesh.position.x = 0</code></pre>
-        </div>
-        <div class="slide temp abs-bc">
-            <pre><code>mesh.position.x = -100</code></pre>
-        </div>
-        <div class="slide temp abs-bc">
-            <pre><code>mesh.scale.set(2,2,2)</code></pre>
-        </div>
-        <div class="slide temp abs-bc">
-            <pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre>
-        </div>
-    </section>
-
-    <section class="slide">
         <iframe class="iframe-top" src="iframes/material.html" frameborder="0"></iframe>
         <h2>材料（Materials）</h2>
         <div class="slide temp abs-bc">
@@ -254,7 +237,7 @@
     </section>
 
     <div class="slide">
-        <h2>纹理贴图</h2>
+        <h2>模型纹理</h2>
         <iframe src="iframes/UVs.html" frameborder="0"></iframe>
         <div class="slide temp abs-bc">
           <pre><code>var texture = new THREE.TextureLoader().load("color-map.jpg");</code></pre>
@@ -266,6 +249,23 @@
           <pre><code>var cube = new THREE.Mesh( geometry, material );//几何模型和材料合成</code></pre>
         </div>
     </div>
+
+    <section class="slide">
+        <iframe class="iframe-top" src="iframes/transforms.html" frameborder="0"></iframe>
+        <h2>模型参数设置</h2>
+        <div class="temp abs-bc">
+            <pre><code>mesh.position.x = 0</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>mesh.position.x = -100</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>mesh.scale.set(2,2,2)</code></pre>
+        </div>
+        <div class="slide temp abs-bc">
+            <pre><code>mesh.rotation.y = Math.PI * 5 / 4</code></pre>
+        </div>
+    </section>
 
     <section class="slide">
         <iframe class="iframe-top" src="iframes/lights.html" frameborder="0"></iframe>
