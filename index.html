@@ -110,14 +110,14 @@
         <ol>
             <li>
                 <h2>页面加载three.js</h2>
-                <pre class="overlay-full language-markup"><code style="font-size: 32px;">
+                <pre class="overlay-full language-markup"><code style="font-size: 38px;">
                     &lt;script src="js/three.min.js"&gt;&lt;/script&gt;
                 </code></pre>
             </li>
 
             <li class="slide">
                 <h2>创建场景，相机，以及渲染器</h2>
-                <pre><code style="font-size: 32px;">
+                <pre><code style="font-size: 38px;">
                     //创建场景
                     var scene = new THREE.Scene();
 
@@ -143,7 +143,7 @@
         <ol>
             <li>
                 <h2>添加正方体</h2>
-                <pre><code style="font-size: 32px;">
+                <pre><code style="font-size: 38px;">
                     //创建一个正方体几何形状
                     var geometry = new THREE.BoxGeometry(1, 1, 1);
                     //创建法向量网孔材料
@@ -156,7 +156,7 @@
             </li>
             <li class="slide">
                 <h2>制作动画</h2>
-                <pre><code style="font-size: 32px;">
+                <pre><code style="font-size: 38px;">
                     var render = function () {
                         //旋转
                         cube.rotation.x += 0.1;
@@ -357,7 +357,7 @@
         <ol>
             <li>
                 <h2>性能监测组件Stats</h2>
-                <pre><code style="font-size: 32px;">
+                <pre><code style="font-size: 38px;">
                     //新建一个stats对象
                     var stats = new Stats();
                     //添加到页面渲染区域
@@ -373,7 +373,7 @@
             </li>
             <li class="slide">
                 <h2>参数调试组件（dat.GUI）</h2>
-                <pre><code style="font-size: 32px;">
+                <pre><code style="font-size: 38px;">
                     //定义一个 JavaScript 对象, 保存希望通过 dat.GUI 改变的属性
                     var controls = new function () {
                         this.rotationSpeed = 0.02;
